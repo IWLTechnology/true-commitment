@@ -20,8 +20,8 @@ vi.onended = function() {
 }else{
 var sr = files[v-1];
   document.body.innerHTML = `
-<audio autoplay controls>
-  <source src="https://iwltechnology.github.io/true-commitment/${sr}.mp3" id="playing" type="audio/mpeg">
+<audio autoplay controls id="playing">
+  <source src="https://iwltechnology.github.io/true-commitment/${sr}.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>`
 let playing = document.getElementById("playing");
