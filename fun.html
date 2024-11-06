@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title>Bonus Content</title>
+</head>
+<body>
+<script>
+var files = ['instrumental', '8 Bit', 'Drum & Bass', 'daftpunk', 'Dubstep', 'EDM', 'avicii', 'metal', 'original'];
+function play(v){
+if(v == 0){
+  document.body.innerHTML = `
+<video width="100%" height="auto" id="tehehe" autoplay>
+  <source src="https://iwltechnology.github.io/true-commitment/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>`
+let vi = document.getElementById("tehehe");
+vi.onended = function() {
+  replacePage();
+};
+}else{
+var sr = files[v-1];
+  document.body.innerHTML = `
+<audio autoplay controls>
+  <source src="https://iwltechnology.github.io/true-commitment/${sr}.mp3" id="playing" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>`
+let playing = document.getElementById("playing");
+playing.onended = function() {
+  replacePage()
+};
+}
+}
+function replacePage(){
+document.body.innerHTML = `<div class="w3-center"><h1>Get RICKROLLED!</h1><br><br><button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(1)">Play the instrumental version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(2)">Play the 8 Bit version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(3)">Play the Drum & Bass version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(4)">Play the daft punk version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(5)">Play the dubstep version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(6)">Play the EDM version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(7)">Play the AVICII version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(8)">Play the metal version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(9)">Play the original version</button><br><br>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" onclick="play(0)">Play the video again</button><br><br></div>`;
+}
+</script>
+<button class="w3-btn w3-round-large w3-ripple w3-purple w3-border-purple w3-border" style="width: 100%; height: 100%; font-size: 5vh;" onclick="play(0)">View the Bonus Content</button>
+</body>
+</html>
